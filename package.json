@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "npm run start",
+    "start": "bundle exec jekyll serve --port 4004 --config _config.yml"
+  }
+}
