@@ -1,0 +1,10 @@
+permalink: /:title
+post_dirs: true
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+hostname: theprivacynewsletter.com
+url: https://theprivacynewsletter.com
+api: https://simpleanalytics.com
+favicons: https://simpleanalytics.com
+repository: simpleanalytics/privacynewsletter
