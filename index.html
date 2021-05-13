@@ -2,7 +2,7 @@
 layout: default
 ---
 
- <img
+<img
   src="https://assets.simpleanalytics.com/images/people/adriaan.jpg"
   style="
     margin: 2rem auto 1rem;
@@ -13,17 +13,15 @@ layout: default
 />
 
 <p style="max-width: 500px; margin: 0 auto">
-  Hey, my name is Adriaan, I'm the founder of Simple Analytics. About
-  once a month I share insights and privacy updates in our newsletter.
+  Hey, my name is Adriaan, I'm the founder of Simple Analytics. About once a
+  month I share insights and privacy updates in our newsletter.
 </p>
 
 <div class="mt-1 ta-c">
   <form data-js="subscribe" class="subscribe">
     <h3>Subscribe to our privacy newsletter</h3>
     <p>It's short, sweet, and insightful.</p>
-    <p class="response" style="display: none">
-      Thank you, keep you posted ;)
-    </p>
+    <p class="response" style="display: none">Thank you, keep you posted ;)</p>
     <p class="mb-0">
       <input name="email" placeholder="Your email..." type="email" />
       <input class="button" value="Try it" type="submit" />
@@ -56,3 +54,28 @@ layout: default
     </div>
   </form>
 </div>
+
+<div class="ta-l mt-3">
+  <h2 id="issues">Past issues</h2>
+
+  <ul class="past">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}"
+        >#{{post.issue}} - {{ post.date | date: "%b %Y" }} - {{ post.title }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+  ul.past {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.past a {
+    margin: 0.5rem 0;
+    display: block;
+  }
+</style>

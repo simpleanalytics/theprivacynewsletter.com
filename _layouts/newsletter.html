@@ -71,6 +71,16 @@
     <!-- Style -->
     <link rel="stylesheet" type="text/css" href="/app.css?v=3" />
 
+    <style type="text/css">
+      body,
+      .body {
+        background-color: #eef9ff !important;
+      }
+      .spacer {
+        display: none !important;
+      }
+    </style>
+
     <!-- Privacy friendly website statistics -->
     <script
       async
@@ -129,86 +139,50 @@
       HTMLCollection.prototype.forEach = Array.prototype.forEach;
     </script>
 
-    <main>
-      <section class="page page-center"><img
-  src="https://assets.simpleanalytics.com/images/people/adriaan.jpg"
-  style="
-    margin: 2rem auto 1rem;
-    width: 100px;
-    height: 100px;
-    border-radius: 1000px;
-  "
-/>
+    <h1
+      style="
+        font-size: 20px;
+        width: calc(100% - 2rem);
+        max-width: 700px;
+        margin: 0 auto 1rem;
+      "
+      class="ta-c"
+    >
+      {{page.title}}
+    </h1>
 
-<p style="max-width: 500px; margin: 0 auto">
-  Hey, my name is Adriaan, I'm the founder of Simple Analytics. About once a
-  month I share insights and privacy updates in our newsletter.
-</p>
-
-<div class="mt-1 ta-c">
-  <form data-js="subscribe" class="subscribe">
-    <h3>Subscribe to our privacy newsletter</h3>
-    <p>It's short, sweet, and insightful.</p>
-    <p class="response" style="display: none">Thank you, keep you posted ;)</p>
-    <p class="mb-0">
-      <input name="email" placeholder="Your email..." type="email" />
-      <input class="button" value="Try it" type="submit" />
+    <p class="ta-c">
+      <a href="/" class="button">Subscribe to this newsletter</a>
     </p>
-    <div class="checkboxes">
-      <label class="checkbox" for="newsletter-1620382602386335675">
-        <input
-          name="newsletter"
-          type="checkbox"
-          id="newsletter-1620382602386335675"
-          checked
-        />
-        <span>Newsletter</span>
-        <span class="checkmark"></span>
-      </label>
 
-      <label
-        class="ml-1 checkbox"
-        for="notify-new-blog-posts-1620382602386335675"
-      >
-        <input
-          name="notify"
-          type="checkbox"
-          id="notify-new-blog-posts-1620382602386335675"
-          checked
-        />
-        <span>Notify me of new blog posts</span>
-        <span class="checkmark"></span>
-      </label>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        max-width: 600px;
+        margin: 0 auto 5px;
+      "
+    >
+      {% if page.previous %}
+      <p style="margin: 0; font-size: 12px">
+        <a href="{{ page.previous.url }}" style="text-decoration: none"
+          >← Previous</a
+        >
+      </p>
+      {% else %}
+      <div></div>
+      {% endif %} {% if page.next %}
+      <p style="margin: 0; font-size: 12px">
+        <a href="{{ page.next.url }}" style="text-decoration: none">Next →</a>
+      </p>
+      {% endif %}
     </div>
-  </form>
-</div>
 
-<div class="ta-l mt-3">
-  <h2 id="issues">Past issues</h2>
+    {{content}}
 
-  <ul class="past">
-    
-    <li>
-      <a href="/001"
-        >#001 - May 2021 - What are Google, Apple, and Facebook doing?</a
-      >
-    </li>
-    
-  </ul>
-</div>
-
-<style>
-  ul.past {
-    list-style-type: none;
-    padding: 0;
-  }
-  ul.past a {
-    margin: 0.5rem 0;
-    display: block;
-  }
-</style>
-</section>
-    </main>
+    <p class="ta-c mt-3 mb-2">
+      <a href="/" class="button">Subscribe to this newsletter</a>
+    </p>
 
     <footer class="general">
       <div class="intro">
