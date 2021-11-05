@@ -1797,3 +1797,10 @@ main th {
   top: 0;
   left: 0;
 }
+
+/* Make sure images in the new apps section are scaled in the right aspect ratio */
+.mj-column-per-50 img {
+  object-fit: cover;
+  height: 153px !important;
+  object-position: top;
+}
